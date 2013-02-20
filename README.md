@@ -1,6 +1,6 @@
 Improved Multithreaded Unit Testing (IMUnit) research, University of Illinois Urbana-Champaign, Professor Darko Marinov
 
-This is the demo version of the IMUnit research that I did with Vilas and Professor Marinov from Sep 2011 to May 2012.
+This is the demo version of the IMUnit research that I helped Vilas Jagannath as a undergraduate research assistant from Sep 2011 to May 2012.
 
 IMUnit is a framework for writing and executing multithreaded unit tests. 
 A multithreaded test exercises the code under test with two or more threads.
