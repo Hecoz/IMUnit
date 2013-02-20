@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<project name="imunit-demo" default="run-tests" basedir=".">
+	<property name="bin" value="bin" />
+	<property name="lib" value="lib" />
+	<property name="src" value="src" />
+	<property name="dist" value="dist" />
+	<property name="dist-zip" value="${dist}/imunit-demo.zip" />
+
+	<path id="classpath">
+		<fileset dir="${lib}">
+			<include name="*.jar" />
+		</fileset>
+		<pathelement location="${bin}" />
+	</path>
+
+	<target name="build">
+		<mkdir dir="${bin}" />
+		<javac srcdir="${src}" includeantruntime="false" destdir="${bin}" debug="on" optimize="off">
+			<classpath refid="classpath" />
+		</javac>
+	</target>
+
+	<target name="run-tests" depends="build">
+		<java classname="org.junit.runner.JUnitCore">
+			<classpath refid="classpath" />
+			<arg value="edu.illinois.imunit.IMUnitDemoTests" />
+		</java>
+	</target>
+
+	<target name="dist" depends="clean">
+		<property name="temp-zip" value="temp.zip" />
+		<zip destfile="${temp-zip}" basedir=".." includes="imunit-demo/**" excludes="imunit-demo/**/.svn/**" />
+		<mkdir dir="${dist}" />
+		<move file="${temp-zip}" tofile="${dist-zip}" />
+	</target>
+
+	<target name="clean">
+		<delete dir="${bin}" failonerror="false" />
+		<delete dir="${dist}" failonerror="false" />
+	</target>
+</project>

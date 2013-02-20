@@ -1,0 +1,9 @@
+This project contains the "edu.illinois.imunit.IMUnitDemoTests" class
+which contains some multithreaded unit tests for the
+"java.util.concurrent.ArrayBlockingQueue" class, which demonstrate the
+capabilities of IMUnit
+
+To execute the demo tests, you can just execute "ant" in this
+directory. You can also import this project into Eclipse and run the
+tests in "edu.illinois.imunit.IMUnitDemoTests" using the Eclipse JUnit
+runner.
